@@ -108,6 +108,23 @@ button, .btn { font-family: inherit; }
 .page-title { background: var(--soft); border-bottom: 1px solid var(--line); padding: 72px 0; }
 .page-title h1 { max-width: 760px; font-size: 48px; line-height: 1.15; }
 .page-title p { max-width: 640px; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.detail-intro { display: grid; grid-template-columns: minmax(0, 1fr) 256px; align-items: center; gap: 48px; }
+.detail-photo { width: 256px; height: 176px; object-fit: contain; justify-self: end; }
+.detail-photo.cover { height: 166px; object-fit: cover; border-radius: 8px; }
+.emoji { font-size: 18px; }
+.marketing-detail main > section { padding-block: 48px; }
+.marketing-detail main h1 { font-size: 32px; line-height: 1.3; }
+.marketing-detail main h2 { font-size: 22px; line-height: 1.4; }
+.marketing-detail main h3 { font-size: 18px; line-height: 1.45; }
+.marketing-detail .page-title { padding-block: 36px; }
+.marketing-detail .page-title p { max-width: 620px; margin-top: 12px; font-size: 14px; line-height: 1.8; }
+.marketing-detail .feature h3 { font-size: 16px; }
+.marketing-detail .feature p { margin-top: 8px; }
+.marketing-detail .big-mail { font-size: 22px; line-height: 1.5; margin-top: 12px; }
+.faq-row { display: flex; align-items: center; gap: 18px; }
+.faq-num { width: 24px; flex: none; color: var(--primary); font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.faq.numbered p { padding-left: 42px; }
+.detail-step { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--primary); }
 .checks li, .steps li { display: flex; gap: 10px; margin-top: 14px; font-size: 14px; line-height: 1.6; }
 .num { width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; flex: none; }
 .contact-grid { grid-template-columns: 1fr 1.1fr; }
@@ -115,6 +132,7 @@ button, .btn { font-family: inherit; }
 .big-mail { display: inline-block; margin-top: 18px; color: var(--primary); font-family: var(--display); font-size: 32px; font-weight: 600; text-decoration: none; }
 .hidden { display: none; }
 @media (min-width: 981px) { .phone-only { display: none; } }
+@media (min-width: 1280px) { .features.wide { grid-template-columns: repeat(4, 1fr); } }
 dialog { width: min(420px, calc(100% - 32px)); border: 0; border-radius: 16px; padding: 20px; }
 dialog::backdrop { background: rgb(21 38 49 / 35%); }
 dialog a { display: flex; justify-content: space-between; align-items: center; min-height: 48px; margin-top: 8px; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); text-decoration: none; font-weight: 600; }
@@ -123,6 +141,13 @@ dialog a { display: flex; justify-content: space-between; align-items: center; m
   .icon-btn { display: inline-flex; }
   .features, .strip-grid, .price-grid, .role-grid, .footer-grid, .contact-grid, .note { grid-template-columns: 1fr; }
   .section h2, .page-title h1, .tagline { font-size: 32px; }
+  .detail-intro { display: block; position: relative; }
+  .detail-photo { position: absolute; top: 0; right: 0; width: 72px; height: 54px; }
+  .detail-photo.cover { height: 40px; }
+  .marketing-detail .page-title .kicker { min-height: 40px; padding-right: 80px; }
+  .marketing-detail main h1 { font-size: 25px; }
+  .marketing-detail main h2 { font-size: 20px; }
+  .faq.numbered p { padding-left: 32px; }
   .hero { min-height: 0; }
   .hero-copy { min-height: 520px; align-items: flex-start; padding-top: 28px; }
   .hero::before { background: var(--hero-mobile); }
