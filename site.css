@@ -48,6 +48,8 @@ button, .btn { font-family: inherit; }
 .hero-copy { min-height: 620px; display: flex; align-items: center; padding-block: 60px; }
 .kicker { display: flex; align-items: center; gap: 8px; color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .kicker::before { content: ""; width: 28px; height: 1px; background: var(--primary); }
+.kicker.plain { letter-spacing: 0; font-weight: 600; text-transform: none; }
+.kicker.plain::before { content: none; }
 .wordmark { height: 62px; width: auto; margin-top: 16px; }
 .tagline { margin-top: 22px; font-family: var(--display); font-size: 40px; line-height: 1.15; font-weight: 600; }
 .tagline span { color: var(--primary); }
@@ -63,22 +65,52 @@ button, .btn { font-family: inherit; }
 .section { padding: 88px 0; }
 .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
 .section h2 { font-size: 40px; line-height: 1.15; }
-.more { color: var(--primary); font-size: 14px; font-weight: 700; text-decoration: none; }
+.more { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-size: 14px; font-weight: 700; text-decoration: none; }
+.more svg { width: 16px; height: 16px; }
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; }
 .feature { border-top: 1px solid var(--line); padding-top: 24px; }
 .badge { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; margin-bottom: 18px; }
 .badge.primary { background: var(--primary-soft); color: var(--primary); }
 .badge.accent { background: var(--accent-soft); color: var(--accent); }
 .badge.success { background: var(--success-soft); color: var(--success); }
+.badge.warning { background: var(--warning-soft); color: var(--warning); }
+.badge svg { width: 20px; height: 20px; }
 .feature h3 { font-family: var(--display); font-size: 20px; }
 .feature p, .role p, .price p, .faq p { margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .roles { background: var(--soft); }
 .tabs { display: flex; gap: 4px; width: fit-content; max-width: 100%; padding: 4px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-.tabs button { min-height: 40px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-weight: 600; padding: 0 16px; cursor: pointer; }
+.tabs button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-weight: 600; padding: 0 16px; cursor: pointer; }
+.tabs button svg { width: 16px; height: 16px; }
 .tabs button[aria-selected="true"] { background: var(--primary); color: white; }
 .role-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; }
 .role h3 { font-size: 32px; line-height: 1.25; max-width: 460px; }
-.role li { display: flex; gap: 8px; margin-top: 12px; font-size: 14px; }
+.role li, .checks li { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; font-size: 14px; }
+.role li svg, .checks li svg, .icon-sm { width: 16px; height: 16px; flex: none; margin-top: 2px; color: var(--primary); }
+.panel header .title, .panel footer, .ok { display: flex; align-items: center; gap: 8px; }
+.panel header svg, .ok svg { width: 16px; height: 16px; }
+.meta { color: var(--muted); font-size: 11px; font-weight: 500; }
+.person { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 14px; font-weight: 700; flex: none; }
+.quote { margin-top: 12px; color: var(--ink); font-size: 14px; line-height: 1.6; }
+.byline { margin-top: 12px; font-size: 12px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.stats b { display: block; font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--primary); }
+.stats p { margin-top: 4px; font-size: 12px; }
+.lines { display: grid; gap: 16px; margin-top: 20px; }
+.lines p { display: flex; align-items: center; gap: 12px; margin: 0; color: var(--ink); font-size: 14px; }
+.pair { justify-content: space-between; }
+.good { color: var(--success); font-weight: 600; }
+.warn { color: var(--accent); font-weight: 600; }
+.info { color: var(--primary); font-weight: 600; }
+.section-mark { width: 32px; height: 32px; margin-bottom: 20px; }
+.section-mark.primary { color: var(--primary); }
+.section-mark.accent { color: var(--accent); }
+.section-mark svg { width: 32px; height: 32px; }
+.page-title .kicker, .roles .kicker { text-transform: none; letter-spacing: 0; font-weight: 600; }
+.roles .kicker { text-transform: uppercase; letter-spacing: .14em; }
+.page-title .kicker::before, .roles .kicker::before { content: none; }
+.note .kicker { text-transform: none; letter-spacing: 0; font-size: 12px; }
+.note .kicker::before { content: none; }
 .panel { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
 .panel header, .panel footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; }
 .panel header { border-bottom: 1px solid var(--line); font-weight: 700; font-size: 14px; }
@@ -89,12 +121,25 @@ button, .btn { font-family: inherit; }
 .note img { height: 128px; width: 100%; object-fit: cover; border-radius: 10px; }
 .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .offer { border: 1px solid rgb(0 104 113 / 25%); background: var(--soft); border-radius: 16px; padding: 32px; }
+.offer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.offer-top .badge { width: 48px; height: 48px; margin: 0; }
+.offer-top .tag { color: var(--primary); font-size: 12px; font-weight: 500; }
 .offer h3 { margin-top: 24px; font-size: 30px; }
-.offer li { margin-top: 12px; font-size: 14px; }
-.mail { display: flex; justify-content: center; gap: 8px; margin-top: 16px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.offer ul.checks { margin: 24px 0; padding: 20px 0; border-block: 1px solid var(--line); }
+.offer ul.checks li { margin-top: 0; }
+.offer ul.checks li + li { margin-top: 12px; }
+.need { display: flex; align-items: center; gap: 12px; margin-top: 28px; color: var(--muted); font-size: 14px; }
+.need svg { width: 20px; height: 20px; color: var(--primary); flex: none; }
+.mail { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 16px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.mail svg { width: 16px; height: 16px; }
 .faq { border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); }
-.faq summary { cursor: pointer; padding: 18px 0; font-size: 16px; font-weight: 600; }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; padding: 18px 0; font-size: 16px; font-weight: 600; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .chev { display: grid; flex: none; color: var(--muted); transition: transform .2s ease; }
+.faq summary svg { width: 16px; height: 16px; }
+.faq details[open] summary .chev { transform: rotate(180deg); }
+.faq-row { flex: 1; }
 .faq p { padding-bottom: 16px; }
 .band { background: var(--soft); border-block: 1px solid var(--line); }
 .band .wrap, .cta .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
@@ -105,6 +150,12 @@ button, .btn { font-family: inherit; }
 .footer nav, .footer .stack { display: flex; flex-direction: column; gap: 12px; }
 .legal { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 .bottom { display: none; }
+.rail { display: none; position: fixed; inset: 0 auto 0 0; z-index: 40; width: 96px; flex-direction: column; align-items: center; gap: 8px; border-right: 1px solid var(--line); background: white; padding: 20px 8px; }
+.rail .brand { margin-bottom: 20px; }
+.rail nav { display: flex; flex-direction: column; gap: 8px; width: 100%; flex: 1; }
+.rail-tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; width: 100%; min-height: 74px; padding: 10px 4px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 600; line-height: 1.35; text-decoration: none; cursor: pointer; }
+.rail-tab svg { width: 23px; height: 23px; }
+.rail-tab[aria-current="page"] { background: var(--primary-soft); color: var(--primary); font-weight: 700; }
 .page-title { background: var(--soft); border-bottom: 1px solid var(--line); padding: 72px 0; }
 .page-title h1 { max-width: 760px; font-size: 48px; line-height: 1.15; }
 .page-title p { max-width: 640px; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.7; }
@@ -117,29 +168,59 @@ button, .btn { font-family: inherit; }
 .marketing-detail main h2 { font-size: 22px; line-height: 1.4; }
 .marketing-detail main h3 { font-size: 18px; line-height: 1.45; }
 .marketing-detail .page-title { padding-block: 36px; }
+.marketing-detail .page-title .kicker { margin-bottom: 10px; gap: 10px; }
 .marketing-detail .page-title p { max-width: 620px; margin-top: 12px; font-size: 14px; line-height: 1.8; }
+.marketing-detail .section-head { margin-bottom: 28px; }
+.marketing-detail .roles .kicker { text-transform: none; letter-spacing: 0; font-weight: 600; }
+.marketing-detail .role h3 { max-width: 28rem; font-size: 18px; line-height: 1.45; }
+.marketing-detail .features.wide { gap: 28px 32px; }
+.marketing-detail .feature { padding-top: 20px; }
+.marketing-detail .feature .badge { width: 36px; height: 36px; margin-bottom: 14px; border-radius: 14px; }
 .marketing-detail .feature h3 { font-size: 16px; }
 .marketing-detail .feature p { margin-top: 8px; }
+.marketing-detail .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
 .marketing-detail .big-mail { font-size: 22px; line-height: 1.5; margin-top: 12px; }
 .faq-row { display: flex; align-items: center; gap: 18px; }
 .faq-num { width: 24px; flex: none; color: var(--primary); font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .faq.numbered p { padding-left: 42px; }
 .detail-step { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--primary); }
-.checks li, .steps li { display: flex; gap: 10px; margin-top: 14px; font-size: 14px; line-height: 1.6; }
+.steps li { display: flex; gap: 10px; margin-top: 14px; font-size: 14px; line-height: 1.6; }
+.steps h3 { font-family: var(--sans); font-size: 14px; font-weight: 600; }
 .num { width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; flex: none; }
 .contact-grid { grid-template-columns: 1fr 1.1fr; }
 .card { border: 1px solid var(--line); background: var(--soft); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+.lead-icon, .card-icon { color: var(--primary); }
+.lead-icon { margin-bottom: 20px; }
+.lead-icon svg { width: 24px; height: 24px; }
+.card-icon { margin-bottom: 16px; }
+.card-icon svg { width: 20px; height: 20px; }
 .big-mail { display: inline-block; margin-top: 18px; color: var(--primary); font-family: var(--display); font-size: 32px; font-weight: 600; text-decoration: none; }
+@media (min-width: 768px) { .mobile-only { display: none; } }
 .hidden { display: none; }
 @media (min-width: 981px) { .phone-only { display: none; } }
+@media (min-width: 640px) { .features.wide { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1280px) { .features.wide { grid-template-columns: repeat(4, 1fr); } }
 dialog { width: min(420px, calc(100% - 32px)); border: 0; border-radius: 16px; padding: 20px; }
 dialog::backdrop { background: rgb(21 38 49 / 35%); }
 dialog a { display: flex; justify-content: space-between; align-items: center; min-height: 48px; margin-top: 8px; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); text-decoration: none; font-weight: 600; }
-@media (max-width: 980px) {
+@media (max-width: 1279px) { .nav { display: none; } }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .rail { display: flex; }
+  .site { padding-left: 96px; }
+  .actions .ghost, .icon-btn { display: none; }
+  .header { height: 76px; }
+  .footer { display: none; }
+  .marketing-detail main > section { padding-block: 36px; }
+  .marketing-detail .page-title { padding-block: 28px; }
+  .marketing-detail main h1 { font-size: 28px; }
+  .detail-intro { grid-template-columns: minmax(0, 1fr) 180px; gap: 24px; }
+  .detail-photo, .detail-photo.cover { width: 180px; height: 144px; }
+}
+@media (max-width: 767px) {
   .nav, .actions .desk { display: none; }
   .icon-btn { display: inline-flex; }
-  .features, .strip-grid, .price-grid, .role-grid, .footer-grid, .contact-grid, .note { grid-template-columns: 1fr; }
+  .features, .strip-grid, .price-grid, .role-grid, .footer-grid, .contact-grid, .note, .marketing-detail .contact-grid { grid-template-columns: 1fr; }
+  .features.wide { grid-template-columns: 1fr 1fr; }
   .section h2, .page-title h1, .tagline { font-size: 32px; }
   .detail-intro { display: block; position: relative; }
   .detail-photo { position: absolute; top: 0; right: 0; width: 72px; height: 54px; }
@@ -147,6 +228,7 @@ dialog a { display: flex; justify-content: space-between; align-items: center; m
   .marketing-detail .page-title .kicker { min-height: 40px; padding-right: 80px; }
   .marketing-detail main h1 { font-size: 25px; }
   .marketing-detail main h2 { font-size: 20px; }
+  .marketing-detail main h3 { font-size: 17px; }
   .faq.numbered p { padding-left: 32px; }
   .hero { min-height: 0; }
   .hero-copy { min-height: 520px; align-items: flex-start; padding-top: 28px; }
@@ -161,4 +243,7 @@ dialog a { display: flex; justify-content: space-between; align-items: center; m
   .footer { display: none; }
   .band .wrap, .cta .wrap, .section-head { display: block; }
   .band .btn, .cta .btn { margin-top: 16px; }
+}
+@media (max-width: 639px) {
+  .features.wide { grid-template-columns: 1fr; }
 }

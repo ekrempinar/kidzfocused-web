@@ -29,9 +29,10 @@ document.querySelectorAll("[data-role]").forEach((button) => {
     if (!role || !title || !text || !list) return;
     title.textContent = role.title;
     text.textContent = role.text;
+    const check = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
     list.replaceChildren(...role.bullets.map((bullet) => {
       const item = document.createElement("li");
-      item.textContent = bullet;
+      item.innerHTML = check + bullet;
       return item;
     }));
     document.querySelectorAll("[data-preview]").forEach((panel) => {
@@ -41,5 +42,5 @@ document.querySelectorAll("[data-role]").forEach((button) => {
 });
 
 const menu = document.querySelector("#more");
-document.querySelector("[data-open-more]")?.addEventListener("click", () => menu?.showModal());
+document.querySelectorAll("[data-open-more]").forEach((button) => button.addEventListener("click", () => menu?.showModal()));
 menu?.addEventListener("click", (event) => { if (event.target === menu) menu.close(); });
